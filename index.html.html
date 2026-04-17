@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>CodeCraft Solutions | Affordable Computer Science Projects for Students & Developers</title>
+  <meta name="description" content="CodeCraft Solutions delivers affordable, high-quality Computer Science projects including ML, Deep Learning, Python, Data Science, and Image Processing. Get project + full report + explanation + installation support." />
+  <meta name="keywords" content="computer science projects, affordable CS projects, machine learning projects, deep learning projects, python projects, data science projects, image processing projects, final year projects, student projects, CS project developers" />
+  <meta name="author" content="CodeCraft Solutions" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#00C9C8" />
+  <link rel="canonical" href="https://www.codecraftsolutions.dev/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.codecraftsolutions.dev/" />
+  <meta property="og:title" content="CodeCraft Solutions | Affordable CS Projects" />
+  <meta property="og:description" content="We build affordable, professional Computer Science projects with full report, explanation and installation support." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="CodeCraft Solutions | Affordable CS Projects" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"CodeCraft Solutions","description":"Affordable CS project development","url":"https://www.codecraftsolutions.dev","email":"codecraft624@gmail.com","serviceType":["Machine Learning","Deep Learning","Python","Data Science","Image Processing"],"priceRange":"$$","aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"47"}}</script>
+
+  <!-- FONTS: Cormorant Garamond (headings) + Nunito Sans (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Nunito+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <style>
+    :root {
+      --aqua:       #00C9C8;
+      --aqua-light: #4DDDDC;
+      --aqua-dark:  #009997;
+      --aqua-pale:  #E0FAFA;
+      --white:      #FFFFFF;
+      --off-white:  #F4FEFF;
+      --grey-light: #EEF9F9;
+      --grey-mid:   #B0D4D4;
+      --grey-text:  #4A6B6B;
+      --dark:       #0D2626;
+      --dark-mid:   #1A3838;
+      --shadow-sm:  0 2px 12px rgba(0,201,200,.12);
+      --shadow-md:  0 8px 32px rgba(0,201,200,.18);
+      --shadow-lg:  0 20px 60px rgba(0,201,200,.22);
+      --radius:     14px;
+      --radius-sm:  8px;
+      --transition: 0.32s cubic-bezier(.4,0,.2,1);
+      --fh: 'Cormorant Garamond', Georgia, serif;
+      --fb: 'Nunito Sans', 'Segoe UI', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { font-family: var(--fb); background: var(--white); color: var(--dark); line-height: 1.7; overflow-x: hidden; }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    .container { width: 90%; max-width: 1160px; margin: 0 auto; }
+
+    .section-tag {
+      display: inline-block; font-family: var(--fb); font-size: .72rem; font-weight: 800;
+      letter-spacing: .16em; text-transform: uppercase; color: var(--aqua-dark);
+      background: var(--aqua-pale); border: 1px solid rgba(0,201,200,.3);
+      padding: .3rem .9rem; border-radius: 50px; margin-bottom: 1rem;
+    }
+    .section-title {
+      font-family: var(--fh); font-size: clamp(2rem, 4.5vw, 3rem);
+      font-weight: 700; color: var(--dark); line-height: 1.15; letter-spacing: .01em;
+    }
+    .section-title span { color: var(--aqua); }
+    .section-sub { font-family: var(--fb); font-size: 1.05rem; color: var(--grey-text); margin-top: .6rem; max-width: 560px; }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: .5rem;
+      font-family: var(--fb); font-size: .88rem; font-weight: 700; letter-spacing: .03em;
+      padding: .75rem 1.8rem; border-radius: 50px; transition: var(--transition); cursor: pointer; border: none;
+    }
+    .btn-primary { background: var(--aqua); color: var(--white); box-shadow: 0 4px 20px rgba(0,201,200,.4); }
+    .btn-primary:hover { background: var(--aqua-dark); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+    .btn-outline { background: transparent; color: var(--aqua); border: 2px solid var(--aqua); }
+    .btn-outline:hover { background: var(--aqua); color: var(--white); transform: translateY(-2px); }
+    .btn-white { background: white; color: var(--dark); }
+    .btn-white:hover { background: var(--aqua-pale); transform: translateY(-2px); }
+
+    /* NAVBAR */
+    #navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+      background: rgba(255,255,255,.93); backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(0,201,200,.15); transition: var(--transition);
+    }
+    #navbar.scrolled { box-shadow: var(--shadow-sm); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 1rem 0; }
+    .logo {
+      font-family: var(--fh); font-size: 1.7rem; font-weight: 700; color: var(--dark);
+      display: flex; align-items: center; gap: .5rem; letter-spacing: .02em;
+    }
+    .logo-dot { color: var(--aqua); }
+    .logo-icon { width: 36px; height: 36px; background: var(--aqua); border-radius: 8px; display: grid; place-items: center; color: white; font-size: .85rem; }
+    .nav-links { display: flex; align-items: center; gap: 2rem; }
+    .nav-links a { font-family: var(--fb); font-size: .88rem; font-weight: 600; color: var(--grey-text); transition: color var(--transition); position: relative; }
+    .nav-links a::after { content: ''; position: absolute; bottom: -3px; left: 0; right: 0; height: 2px; background: var(--aqua); transform: scaleX(0); transition: transform var(--transition); border-radius: 2px; }
+    .nav-links a:hover { color: var(--aqua); }
+    .nav-links a:hover::after { transform: scaleX(1); }
+    .nav-cta { margin-left: .5rem; padding: .55rem 1.3rem; font-size: .84rem; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .hamburger span { width: 24px; height: 2.5px; background: var(--dark); border-radius: 3px; transition: var(--transition); }
+    .hamburger.open span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+    .mobile-menu { display: none; flex-direction: column; background: white; border-top: 1px solid var(--aqua-pale); max-height: 0; overflow: hidden; transition: max-height .4s ease, padding .3s ease; }
+    .mobile-menu.open { max-height: 400px; padding: 1rem 0; }
+    .mobile-menu a { font-family: var(--fb); font-size: 1rem; font-weight: 600; color: var(--grey-text); padding: .75rem 5%; border-bottom: 1px solid var(--grey-light); transition: background var(--transition); }
+    .mobile-menu a:hover { background: var(--aqua-pale); color: var(--aqua); }
+
+    /* HERO */
+    #hero { padding: 9rem 0 6rem; background: var(--off-white); position: relative; overflow: hidden; }
+    .hero-bg-circles { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+    .hero-bg-circles::before { content: ''; position: absolute; width: 600px; height: 600px; background: radial-gradient(circle, rgba(0,201,200,.15) 0%, transparent 70%); top: -200px; right: -150px; border-radius: 50%; }
+    .hero-bg-circles::after { content: ''; position: absolute; width: 400px; height: 400px; background: radial-gradient(circle, rgba(0,201,200,.1) 0%, transparent 70%); bottom: -100px; left: -100px; border-radius: 50%; }
+    .hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; position: relative; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: .5rem; background: var(--aqua-pale);
+      border: 1px solid rgba(0,201,200,.35); border-radius: 50px; padding: .4rem 1rem;
+      font-family: var(--fb); font-size: .78rem; font-weight: 700; color: var(--aqua-dark);
+      margin-bottom: 1.5rem; letter-spacing: .04em; animation: fadeDown .6s ease both;
+    }
+    .hero-badge i { color: var(--aqua); }
+    .hero-title {
+      font-family: var(--fh); font-size: clamp(2.5rem, 5.5vw, 4rem);
+      font-weight: 700; line-height: 1.1; color: var(--dark); letter-spacing: .01em;
+      animation: fadeUp .7s .1s ease both;
+    }
+    .hero-title span { color: var(--aqua); position: relative; }
+    .hero-title span::after { content: ''; position: absolute; left: 0; right: 0; bottom: -2px; height: 4px; background: var(--aqua); opacity: .3; border-radius: 2px; }
+    .hero-text { font-family: var(--fb); font-size: 1.08rem; color: var(--grey-text); margin: 1.4rem 0 2rem; line-height: 1.8; animation: fadeUp .7s .2s ease both; }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; animation: fadeUp .7s .3s ease both; }
+    .hero-stats { display: flex; gap: 2rem; margin-top: 2.5rem; animation: fadeUp .7s .4s ease both; }
+    .hero-stat strong { display: block; font-family: var(--fh); font-size: 2.2rem; font-weight: 700; color: var(--aqua); line-height: 1; }
+    .hero-stat span { font-family: var(--fb); font-size: .78rem; color: var(--grey-text); font-weight: 600; }
+    .hero-visual { position: relative; animation: fadeUp .7s .2s ease both; }
+    .hero-card-stack { position: relative; width: 100%; max-width: 420px; margin: 0 auto; }
+    .h-card { background: white; border-radius: var(--radius); padding: 1.4rem; box-shadow: var(--shadow-md); border: 1px solid rgba(0,201,200,.15); }
+    .h-card-main { margin-bottom: 1rem; }
+    .h-card-header { display: flex; align-items: center; gap: .8rem; margin-bottom: 1rem; }
+    .h-card-icon { width: 44px; height: 44px; background: var(--aqua-pale); border-radius: 10px; display: grid; place-items: center; font-size: 1.2rem; color: var(--aqua); flex-shrink: 0; }
+    .h-card-title { font-family: var(--fh); font-weight: 700; font-size: 1.05rem; color: var(--dark); }
+    .h-card-sub { font-family: var(--fb); font-size: .75rem; color: var(--grey-text); }
+    .h-card-bar { height: 6px; background: var(--grey-light); border-radius: 3px; margin-bottom: .5rem; overflow: hidden; }
+    .h-card-bar-fill { height: 100%; border-radius: 3px; background: linear-gradient(90deg, var(--aqua), var(--aqua-light)); animation: barGrow 1.5s ease both; }
+    @keyframes barGrow { from { width: 0 } }
+    .h-card-sm { position: absolute; right: -1.5rem; bottom: -1.5rem; width: 180px; padding: 1rem; background: var(--dark); color: white; border-radius: var(--radius); box-shadow: var(--shadow-lg); }
+    .h-card-sm .num { font-family: var(--fh); font-size: 2.2rem; font-weight: 700; color: var(--aqua); line-height: 1; }
+    .h-card-sm .label { font-family: var(--fb); font-size: .73rem; color: var(--grey-mid); margin-top: .2rem; }
+    .h-card-floating { position: absolute; top: -1rem; right: -1rem; background: white; border-radius: 10px; padding: .7rem 1rem; box-shadow: var(--shadow-md); font-family: var(--fb); font-size: .76rem; font-weight: 700; color: var(--dark); display: flex; align-items: center; gap: .4rem; border: 1px solid var(--aqua-pale); }
+    .h-card-floating i { color: #22c55e; }
+
+    /* TRUST */
+    #trust { background: var(--dark); padding: 1.8rem 0; }
+    .trust-inner { display: flex; align-items: center; justify-content: center; gap: 3rem; flex-wrap: wrap; }
+    .trust-item { display: flex; align-items: center; gap: .6rem; font-family: var(--fb); color: var(--grey-mid); font-size: .88rem; font-weight: 600; }
+    .trust-item i { color: var(--aqua); font-size: .95rem; }
+
+    /* SERVICES */
+    #services { padding: 6rem 0; background: var(--white); }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+    .service-card { background: var(--white); border: 1.5px solid rgba(0,201,200,.2); border-radius: var(--radius); padding: 2rem; transition: var(--transition); position: relative; overflow: hidden; }
+    .service-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--aqua), var(--aqua-light)); transform: scaleX(0); transition: transform var(--transition); border-radius: 3px 3px 0 0; }
+    .service-card:hover { border-color: var(--aqua); box-shadow: var(--shadow-md); transform: translateY(-4px); }
+    .service-card:hover::before { transform: scaleX(1); }
+    .svc-icon { width: 56px; height: 56px; background: var(--aqua-pale); border-radius: 14px; display: grid; place-items: center; font-size: 1.5rem; color: var(--aqua); margin-bottom: 1.3rem; transition: var(--transition); }
+    .service-card:hover .svc-icon { background: var(--aqua); color: var(--white); }
+    .svc-title { font-family: var(--fh); font-size: 1.3rem; font-weight: 700; color: var(--dark); margin-bottom: .5rem; }
+    .svc-desc { font-family: var(--fb); font-size: .9rem; color: var(--grey-text); line-height: 1.65; }
+    .svc-tags { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: 1rem; }
+    .svc-tag { font-family: var(--fb); font-size: .7rem; font-weight: 700; background: var(--aqua-pale); color: var(--aqua-dark); border-radius: 4px; padding: .2rem .6rem; }
+
+    /* DELIVERY */
+    #delivery { padding: 5rem 0; background: var(--dark); position: relative; overflow: hidden; }
+    #delivery::before { content: ''; position: absolute; width: 500px; height: 500px; border-radius: 50%; background: radial-gradient(circle, rgba(0,201,200,.12) 0%, transparent 70%); top: -200px; right: -200px; }
+    .delivery-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; position: relative; }
+    .delivery-content .section-tag { background: rgba(0,201,200,.15); color: var(--aqua-light); }
+    .delivery-content .section-title { color: var(--white); }
+    .delivery-content .section-sub { color: var(--grey-mid); max-width: 100%; }
+    .delivery-steps { margin-top: 2rem; display: flex; flex-direction: column; gap: 1.2rem; }
+    .d-step { display: flex; gap: 1.2rem; align-items: flex-start; }
+    .d-step-num { width: 42px; height: 42px; border-radius: 50%; background: rgba(0,201,200,.15); border: 2px solid rgba(0,201,200,.4); display: grid; place-items: center; font-family: var(--fh); font-weight: 700; font-size: 1rem; color: var(--aqua); flex-shrink: 0; }
+    .d-step-text strong { display: block; font-family: var(--fb); font-weight: 700; color: var(--white); margin-bottom: .2rem; }
+    .d-step-text span { font-family: var(--fb); font-size: .88rem; color: var(--grey-mid); }
+    .delivery-package { background: rgba(255,255,255,.05); border: 1.5px solid rgba(0,201,200,.25); border-radius: var(--radius); padding: 2.5rem; }
+    .pkg-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(0,201,200,.2); }
+    .pkg-icon { width: 52px; height: 52px; background: var(--aqua); border-radius: 12px; display: grid; place-items: center; font-size: 1.4rem; color: white; }
+    .pkg-title { font-family: var(--fh); font-weight: 700; font-size: 1.4rem; color: white; }
+    .pkg-sub { font-family: var(--fb); font-size: .82rem; color: var(--grey-mid); }
+    .pkg-items { display: flex; flex-direction: column; gap: .9rem; }
+    .pkg-item { display: flex; align-items: center; gap: .9rem; padding: .8rem 1rem; background: rgba(0,201,200,.07); border-radius: var(--radius-sm); border: 1px solid rgba(0,201,200,.15); }
+    .pkg-item i { color: var(--aqua); font-size: 1rem; flex-shrink: 0; }
+    .pkg-item span { font-family: var(--fb); font-size: .88rem; color: rgba(255,255,255,.85); font-weight: 600; }
+    .pkg-cta { margin-top: 1.8rem; width: 100%; justify-content: center; }
+
+    /* PORTFOLIO */
+    #portfolio { padding: 6rem 0; background: var(--off-white); }
+    .portfolio-header { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1rem; margin-bottom: 3rem; }
+    .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; }
+    .project-card { background: white; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-sm); border: 1px solid rgba(0,201,200,.12); transition: var(--transition); }
+    .project-card:hover { box-shadow: var(--shadow-md); transform: translateY(-5px); }
+    .pc-thumb { height: 180px; background: var(--aqua-pale); position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+    .pc-thumb-icon { font-size: 4rem; color: var(--aqua); opacity: .35; }
+    .pc-badge { position: absolute; top: 1rem; right: 1rem; font-family: var(--fb); font-size: .7rem; font-weight: 700; background: var(--aqua); color: white; padding: .25rem .7rem; border-radius: 50px; }
+    .pc-gradient-1 { background: linear-gradient(135deg, #e0fafa 0%, #b2f0ef 100%); }
+    .pc-gradient-2 { background: linear-gradient(135deg, #dff0ff 0%, #b2def0 100%); }
+    .pc-gradient-3 { background: linear-gradient(135deg, #e8f5e9 0%, #b2dfdb 100%); }
+    .pc-gradient-4 { background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%); }
+    .pc-gradient-5 { background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%); }
+    .pc-gradient-6 { background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%); }
+    .pc-body { padding: 1.5rem; }
+    .pc-category { font-family: var(--fb); font-size: .7rem; font-weight: 800; color: var(--aqua-dark); text-transform: uppercase; letter-spacing: .1em; margin-bottom: .4rem; }
+    .pc-title { font-family: var(--fh); font-weight: 700; font-size: 1.15rem; color: var(--dark); margin-bottom: .5rem; }
+    .pc-desc { font-family: var(--fb); font-size: .85rem; color: var(--grey-text); line-height: 1.55; }
+    .pc-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 1.2rem; padding-top: 1rem; border-top: 1px solid var(--grey-light); }
+    .pc-tech { display: flex; gap: .3rem; flex-wrap: wrap; }
+    .pc-tech span { font-family: var(--fb); font-size: .68rem; background: var(--grey-light); color: var(--grey-text); padding: .15rem .5rem; border-radius: 4px; font-weight: 600; }
+    .pc-link { font-family: var(--fb); color: var(--aqua); font-size: .8rem; font-weight: 700; display: flex; align-items: center; gap: .3rem; transition: gap var(--transition); }
+    .pc-link:hover { gap: .6rem; }
+
+    /* STATS */
+    #stats { padding: 5rem 0; background: var(--aqua); }
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 2rem; text-align: center; }
+    .stat-num { font-family: var(--fh); font-size: clamp(2.8rem, 5vw, 3.8rem); font-weight: 700; color: var(--white); line-height: 1; }
+    .stat-label { font-family: var(--fb); font-size: .92rem; color: rgba(255,255,255,.85); margin-top: .5rem; font-weight: 600; }
+    .stat-icon { font-size: 1.4rem; color: rgba(255,255,255,.6); margin-bottom: .5rem; }
+
+    /* TESTIMONIALS */
+    #testimonials { padding: 6rem 0; background: var(--white); }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+    .testi-card { background: var(--off-white); border: 1.5px solid rgba(0,201,200,.18); border-radius: var(--radius); padding: 2rem; transition: var(--transition); }
+    .testi-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); border-color: var(--aqua); }
+    .testi-stars { color: #f59e0b; font-size: .9rem; margin-bottom: 1rem; }
+    .testi-quote { font-family: var(--fh); font-size: 1.08rem; color: var(--dark); line-height: 1.7; font-style: italic; margin-bottom: 1.5rem; font-weight: 500; }
+    .testi-author { display: flex; align-items: center; gap: .8rem; }
+    .testi-avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--aqua); display: grid; place-items: center; font-family: var(--fb); font-weight: 800; color: white; font-size: .85rem; flex-shrink: 0; }
+    .testi-name { font-family: var(--fh); font-weight: 700; font-size: 1.05rem; color: var(--dark); }
+    .testi-role { font-family: var(--fb); font-size: .78rem; color: var(--grey-text); }
+
+    /* ABOUT */
+    #about { padding: 6rem 0; background: var(--off-white); }
+    .about-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+    .about-content p { font-family: var(--fb); font-size: .97rem; color: var(--grey-text); margin-bottom: 1rem; line-height: 1.8; }
+    .about-values { display: flex; flex-direction: column; gap: .8rem; margin: 1.5rem 0 2rem; }
+    .about-val { display: flex; gap: .8rem; align-items: flex-start; }
+    .about-val i { color: var(--aqua); margin-top: .25rem; flex-shrink: 0; }
+    .about-val span { font-family: var(--fb); font-size: .9rem; color: var(--grey-text); }
+    .contact-panel { background: white; border-radius: var(--radius); padding: 2.5rem; box-shadow: var(--shadow-sm); border: 1.5px solid rgba(0,201,200,.2); position: sticky; top: 100px; }
+    .contact-panel h3 { font-family: var(--fh); font-size: 1.6rem; font-weight: 700; color: var(--dark); margin-bottom: 1.5rem; }
+    .contact-items { display: flex; flex-direction: column; gap: 1.2rem; margin-bottom: 2rem; }
+    .contact-item { display: flex; align-items: flex-start; gap: 1rem; }
+    .c-icon { width: 44px; height: 44px; background: var(--aqua-pale); border-radius: 10px; display: grid; place-items: center; color: var(--aqua); font-size: 1rem; flex-shrink: 0; }
+    .c-label { font-family: var(--fb); font-size: .7rem; text-transform: uppercase; letter-spacing: .1em; color: var(--grey-mid); font-weight: 800; margin-bottom: .2rem; }
+    .c-value { font-family: var(--fb); font-size: .92rem; color: var(--dark); font-weight: 600; }
+    .c-value a { color: var(--aqua-dark); transition: color var(--transition); }
+    .c-value a:hover { color: var(--aqua); }
+    .availability { display: flex; align-items: center; gap: .6rem; font-family: var(--fb); font-size: .82rem; color: var(--grey-text); margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--grey-light); }
+    .avail-dot { width: 8px; height: 8px; border-radius: 50%; background: #22c55e; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(34,197,94,.4); } 50% { box-shadow: 0 0 0 6px rgba(34,197,94,0); } }
+
+    /* FAQ */
+    #faq { padding: 5rem 0; background: var(--white); }
+    .faq-list { max-width: 720px; margin: 3rem auto 0; display: flex; flex-direction: column; gap: .8rem; }
+    .faq-item { border: 1.5px solid rgba(0,201,200,.2); border-radius: var(--radius-sm); overflow: hidden; transition: border-color var(--transition); }
+    .faq-item.open { border-color: var(--aqua); }
+    .faq-q { display: flex; align-items: center; justify-content: space-between; padding: 1.2rem 1.5rem; cursor: pointer; font-family: var(--fb); font-weight: 700; font-size: .93rem; color: var(--dark); background: white; border: none; width: 100%; text-align: left; }
+    .faq-q i { color: var(--aqua); transition: transform var(--transition); flex-shrink: 0; }
+    .faq-item.open .faq-q i { transform: rotate(45deg); }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height .4s ease, padding .3s ease; font-family: var(--fb); font-size: .9rem; color: var(--grey-text); background: var(--aqua-pale); line-height: 1.75; }
+    .faq-item.open .faq-a { max-height: 300px; padding: 1rem 1.5rem 1.2rem; }
+
+    /* CTA */
+    #cta { padding: 6rem 0; background: var(--dark-mid); text-align: center; position: relative; overflow: hidden; }
+    #cta::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(0,201,200,.18) 0%, transparent 70%); }
+    .cta-content { position: relative; }
+    .cta-content h2 { font-family: var(--fh); font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 700; color: white; margin-bottom: 1rem; }
+    .cta-content h2 span { color: var(--aqua); }
+    .cta-content p { font-family: var(--fb); color: var(--grey-mid); font-size: 1.05rem; margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto; }
+    .cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    /* FOOTER */
+    footer { background: var(--dark); padding: 3rem 0 1.5rem; }
+    .footer-inner { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; padding-bottom: 2.5rem; border-bottom: 1px solid rgba(0,201,200,.15); margin-bottom: 1.5rem; }
+    .footer-brand .logo { margin-bottom: 1rem; }
+    .footer-brand p { font-family: var(--fb); font-size: .88rem; color: var(--grey-mid); line-height: 1.7; max-width: 280px; }
+    .footer-col h4 { font-family: var(--fb); font-size: .75rem; font-weight: 800; text-transform: uppercase; letter-spacing: .12em; color: var(--grey-mid); margin-bottom: 1.2rem; }
+    .footer-col ul { display: flex; flex-direction: column; gap: .7rem; }
+    .footer-col ul li a { font-family: var(--fb); font-size: .88rem; color: rgba(255,255,255,.5); transition: color var(--transition); }
+    .footer-col ul li a:hover { color: var(--aqua); }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .footer-bottom p { font-family: var(--fb); font-size: .8rem; color: rgba(255,255,255,.35); }
+    .footer-bottom span { color: var(--aqua); }
+    .social-row { display: flex; gap: .8rem; }
+    .social-btn { width: 40px; height: 40px; border-radius: 10px; background: var(--aqua-pale); display: grid; place-items: center; color: var(--aqua); font-size: 1rem; transition: var(--transition); }
+    .social-btn:hover { background: var(--aqua); color: white; }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeDown { from { opacity: 0; transform: translateY(-12px); } to { opacity: 1; transform: translateY(0); } }
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* RESPONSIVE */
+    @media (max-width: 960px) { .hero-inner { grid-template-columns: 1fr; } .hero-visual { display: none; } .delivery-inner { grid-template-columns: 1fr; } .about-inner { grid-template-columns: 1fr; } .footer-inner { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 680px) { .nav-links { display: none; } .hamburger { display: flex; } .mobile-menu { display: flex; } .stats-grid { grid-template-columns: 1fr 1fr; } .footer-inner { grid-template-columns: 1fr; gap: 2rem; } .footer-bottom { flex-direction: column; text-align: center; } .trust-inner { gap: 1.5rem; } .hero-stats { gap: 1.4rem; } .portfolio-header { flex-direction: column; align-items: flex-start; } }
+    @media (max-width: 400px) { .stats-grid { grid-template-columns: 1fr; } }
+    ::-webkit-scrollbar { width: 6px; } ::-webkit-scrollbar-track { background: var(--off-white); } ::-webkit-scrollbar-thumb { background: var(--aqua); border-radius: 3px; }
+  </style>
+</head>
+<body>
+
+<nav id="navbar" aria-label="Main Navigation">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#hero" class="logo">
+        <div class="logo-icon"><i class="fas fa-code"></i></div>
+        CodeCraft<span class="logo-dot">.</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#delivery">What We Deliver</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#cta" class="btn btn-primary nav-cta">Get a Quote</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Toggle Menu" onclick="toggleMenu(this)"><span></span><span></span><span></span></button>
+    </div>
+    <nav class="mobile-menu" id="mobileMenu">
+      <a href="#services" onclick="closeMenu()">Services</a>
+      <a href="#delivery" onclick="closeMenu()">What We Deliver</a>
+      <a href="#portfolio" onclick="closeMenu()">Portfolio</a>
+      <a href="#testimonials" onclick="closeMenu()">Reviews</a>
+      <a href="#about" onclick="closeMenu()">About &amp; Contact</a>
+      <a href="#cta" onclick="closeMenu()" style="color:var(--aqua);font-weight:700;">Get a Quote &rarr;</a>
+    </nav>
+  </div>
+</nav>
+
+<section id="hero">
+  <div class="hero-bg-circles"></div>
+  <div class="container">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-badge"><i class="fas fa-shield-halved"></i> Trusted by 40+ Students &amp; Developers</div>
+        <h1 class="hero-title">Affordable<br><span>CS Projects</span><br>Built for You</h1>
+        <p class="hero-text">We deliver complete, professional Computer Science projects — Machine Learning, Deep Learning, Python, Data Science &amp; more — with <strong>full report, explanation, and installation</strong> support.</p>
+        <div class="hero-actions">
+          <a href="#services" class="btn btn-primary"><i class="fas fa-rocket"></i> Explore Services</a>
+          <a href="#portfolio" class="btn btn-outline"><i class="fas fa-folder-open"></i> View Projects</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><strong>10+</strong><span>Projects Delivered</span></div>
+          <div class="hero-stat"><strong>100%</strong><span>Satisfaction Rate</span></div>
+          <div class="hero-stat"><strong>24h</strong><span>Avg. Response Time</span></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card-stack">
+          <div class="h-card-floating"><i class="fas fa-circle-check"></i> Project Delivered!</div>
+          <div class="h-card h-card-main">
+            <div class="h-card-header">
+              <div class="h-card-icon"><i class="fas fa-brain"></i></div>
+              <div><div class="h-card-title">Face Recognition System</div><div class="h-card-sub">Deep Learning &middot; Python &middot; OpenCV</div></div>
+            </div>
+            <div class="h-card-bar"><div class="h-card-bar-fill" style="width:92%"></div></div>
+            <div style="font-size:.75rem;color:var(--grey-text);margin-bottom:.8rem;">Accuracy: 92.4%</div>
+            <div class="h-card-bar"><div class="h-card-bar-fill" style="width:78%;animation-delay:.3s"></div></div>
+            <div style="font-size:.75rem;color:var(--grey-text);">Training Progress: 78%</div>
+            <div style="margin-top:1.2rem;display:flex;gap:.5rem;flex-wrap:wrap;">
+              <span class="svc-tag">Python</span><span class="svc-tag">TensorFlow</span><span class="svc-tag">OpenCV</span><span class="svc-tag">Keras</span>
+            </div>
+          </div>
+          <div class="h-card h-card-sm"><div class="num">10+</div><div class="label">Happy Clients 🎉</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="trust">
+  <div class="container">
+    <div class="trust-inner">
+      <div class="trust-item"><i class="fas fa-check-circle"></i> 100% Original Code</div>
+      <div class="trust-item"><i class="fas fa-file-lines"></i> Detailed Report Included</div>
+      <div class="trust-item"><i class="fas fa-headset"></i> Installation Support</div>
+      <div class="trust-item"><i class="fas fa-video"></i> Video Explanation</div>
+      <div class="trust-item"><i class="fas fa-lock"></i> Confidential &amp; Secure</div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+    <div class="reveal" style="text-align:center;margin-bottom:.5rem;"><span class="section-tag">Our Services</span></div>
+    <h2 class="section-title reveal" style="text-align:center;">What We <span>Build</span> For You</h2>
+    <p class="section-sub reveal" style="text-align:center;margin:0 auto;">From final-year academic projects to advanced research-grade systems — we cover every domain of Computer Science.</p>
+    <div class="services-grid">
+      <article class="service-card reveal"><div class="svc-icon"><i class="fas fa-brain"></i></div><h3 class="svc-title">Machine Learning Projects</h3><p class="svc-desc">Supervised, unsupervised, and reinforcement learning systems. Classification, regression, clustering, recommendation engines and more.</p><div class="svc-tags"><span class="svc-tag">Scikit-learn</span><span class="svc-tag">XGBoost</span><span class="svc-tag">Random Forest</span><span class="svc-tag">SVM</span></div></article>
+      <article class="service-card reveal"><div class="svc-icon"><i class="fas fa-robot"></i></div><h3 class="svc-title">Deep Learning Projects</h3><p class="svc-desc">Neural networks, CNNs, RNNs, LSTMs, Transformers, GANs, and transfer learning architectures for complex AI problems.</p><div class="svc-tags"><span class="svc-tag">TensorFlow</span><span class="svc-tag">Keras</span><span class="svc-tag">PyTorch</span><span class="svc-tag">BERT</span></div></article>
+      <article class="service-card reveal"><div class="svc-icon"><i class="fab fa-python"></i></div><h3 class="svc-title">Python Projects</h3><p class="svc-desc">Web scraping, automation, desktop GUI apps, REST APIs, chatbots, and general-purpose Python development for all domains.</p><div class="svc-tags"><span class="svc-tag">Flask</span><span class="svc-tag">Django</span><span class="svc-tag">FastAPI</span><span class="svc-tag">Tkinter</span></div></article>
+      <article class="service-card reveal"><div class="svc-icon"><i class="fas fa-chart-bar"></i></div><h3 class="svc-title">Data Science Projects</h3><p class="svc-desc">End-to-end data pipelines, EDA, predictive analytics, data visualizations, and business intelligence dashboards.</p><div class="svc-tags"><span class="svc-tag">Pandas</span><span class="svc-tag">NumPy</span><span class="svc-tag">Matplotlib</span><span class="svc-tag">Seaborn</span></div></article>
+      <article class="service-card reveal"><div class="svc-icon"><i class="fas fa-eye"></i></div><h3 class="svc-title">Image Processing Projects</h3><p class="svc-desc">Object detection, image segmentation, face recognition, medical imaging, OCR, and real-time video analytics systems.</p><div class="svc-tags"><span class="svc-tag">OpenCV</span><span class="svc-tag">YOLO</span><span class="svc-tag">PIL/Pillow</span><span class="svc-tag">MediaPipe</span></div></article>
+      <article class="service-card reveal"><div class="svc-icon"><i class="fas fa-language"></i></div><h3 class="svc-title">NLP Projects</h3><p class="svc-desc">Sentiment analysis, chatbots, text summarization, language translation, named entity recognition, and speech recognition.</p><div class="svc-tags"><span class="svc-tag">NLTK</span><span class="svc-tag">spaCy</span><span class="svc-tag">Transformers</span><span class="svc-tag">GPT</span></div></article>
+      <article class="service-card reveal"><div class="svc-icon"><i class="fas fa-database"></i></div><h3 class="svc-title">Database &amp; Web Projects</h3><p class="svc-desc">DBMS mini-projects, student management systems, inventory, e-commerce backends, and full-stack web applications.</p><div class="svc-tags"><span class="svc-tag">MySQL</span><span class="svc-tag">MongoDB</span><span class="svc-tag">PostgreSQL</span><span class="svc-tag">React</span></div></article>
+      <article class="service-card reveal"><div class="svc-icon"><i class="fas fa-shield-halved"></i></div><h3 class="svc-title">Cybersecurity Projects</h3><p class="svc-desc">Intrusion detection systems, malware analysis, network security, vulnerability scanners and encryption projects.</p><div class="svc-tags"><span class="svc-tag">Python</span><span class="svc-tag">Wireshark</span><span class="svc-tag">Scapy</span><span class="svc-tag">Kali Tools</span></div></article>
+      <article class="service-card reveal"><div class="svc-icon"><i class="fas fa-microchip"></i></div><h3 class="svc-title">IoT &amp; Embedded Projects</h3><p class="svc-desc">Smart home systems, sensor data processing, Arduino/Raspberry Pi projects with cloud integration and dashboards.</p><div class="svc-tags"><span class="svc-tag">Arduino</span><span class="svc-tag">Raspberry Pi</span><span class="svc-tag">MQTT</span><span class="svc-tag">AWS IoT</span></div></article>
+    </div>
+  </div>
+</section>
+
+<section id="delivery">
+  <div class="container">
+    <div class="delivery-inner">
+      <div class="delivery-content reveal">
+        <span class="section-tag">Our Promise</span>
+        <h2 class="section-title">More Than Just <span>Code</span></h2>
+        <p class="section-sub">Every project comes with a complete package — we don't just hand you files, we make sure you fully understand your project.</p>
+        <div class="delivery-steps">
+          <div class="d-step"><div class="d-step-num">1</div><div class="d-step-text"><strong>Requirement Gathering</strong><span>We discuss your project brief, domain, tech stack preferences, and deadline.</span></div></div>
+          <div class="d-step"><div class="d-step-num">2</div><div class="d-step-text"><strong>Development &amp; Testing</strong><span>Full project development with clean, commented code and rigorous testing.</span></div></div>
+          <div class="d-step"><div class="d-step-num">3</div><div class="d-step-text"><strong>Report Writing</strong><span>Professional academic-grade report with abstract, methodology, results &amp; references.</span></div></div>
+          <div class="d-step"><div class="d-step-num">4</div><div class="d-step-text"><strong>Explanation &amp; Handover</strong><span>We walk you through the entire project — code, logic, and how to present it.</span></div></div>
+          <div class="d-step"><div class="d-step-num">5</div><div class="d-step-text"><strong>Installation Support</strong><span>We help you install, configure, and run the project on your own machine.</span></div></div>
+        </div>
+      </div>
+      <div class="delivery-package reveal">
+        <div class="pkg-header"><div class="pkg-icon"><i class="fas fa-box-archive"></i></div><div><div class="pkg-title">Complete Delivery Package</div><div class="pkg-sub">Everything you need to succeed</div></div></div>
+        <div class="pkg-items">
+          <div class="pkg-item"><i class="fas fa-code"></i><span>Complete Source Code (Clean &amp; Commented)</span></div>
+          <div class="pkg-item"><i class="fas fa-file-word"></i><span>Full Academic Project Report (Word/PDF)</span></div>
+          <div class="pkg-item"><i class="fas fa-video"></i><span>Video Explanation &amp; Demo Recording</span></div>
+          <div class="pkg-item"><i class="fas fa-terminal"></i><span>Step-by-Step Installation Guide</span></div>
+          <div class="pkg-item"><i class="fas fa-database"></i><span>Sample Dataset / Test Data</span></div>
+          <div class="pkg-item"><i class="fas fa-presentation-screen"></i><span>PPT Presentation (on request)</span></div>
+          <div class="pkg-item"><i class="fas fa-headset"></i><span>Post-Delivery Support (7 Days)</span></div>
+          <div class="pkg-item"><i class="fas fa-rotate-right"></i><span>Free Revision (up to 2 rounds)</span></div>
+        </div>
+        <a href="#cta" class="btn btn-primary pkg-cta"><i class="fas fa-paper-plane"></i> Get Your Project Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="portfolio">
+  <div class="container">
+    <div class="portfolio-header">
+      <div><span class="section-tag reveal">Recent Work</span><h2 class="section-title reveal">Our <span>Portfolio</span></h2><p class="section-sub reveal">A selection of recently delivered projects across various CS domains.</p></div>
+      <a href="#cta" class="btn btn-outline reveal"><i class="fas fa-arrow-right"></i> Get Similar Project</a>
+    </div>
+    <div class="portfolio-grid">
+      <article class="project-card reveal"><div class="pc-thumb pc-gradient-1"><i class="fas fa-eye pc-thumb-icon"></i><span class="pc-badge">Deep Learning</span></div><div class="pc-body"><div class="pc-category">Computer Vision</div><h3 class="pc-title">Real-Time Face Recognition Attendance System</h3><p class="pc-desc">Automated attendance using facial recognition with 94% accuracy. Built with FaceNet and a live webcam feed.</p><div class="pc-footer"><div class="pc-tech"><span>Python</span><span>OpenCV</span><span>FaceNet</span></div><a href="#cta" class="pc-link">Build Mine <i class="fas fa-arrow-right"></i></a></div></div></article>
+      <article class="project-card reveal"><div class="pc-thumb pc-gradient-2"><i class="fas fa-heart-pulse pc-thumb-icon"></i><span class="pc-badge">ML</span></div><div class="pc-body"><div class="pc-category">Healthcare AI</div><h3 class="pc-title">Heart Disease Prediction System</h3><p class="pc-desc">ML model predicting heart disease risk with 91% accuracy using clinical features and ensemble methods.</p><div class="pc-footer"><div class="pc-tech"><span>Scikit-learn</span><span>XGBoost</span><span>Flask</span></div><a href="#cta" class="pc-link">Build Mine <i class="fas fa-arrow-right"></i></a></div></div></article>
+      <article class="project-card reveal"><div class="pc-thumb pc-gradient-3"><i class="fas fa-message pc-thumb-icon"></i><span class="pc-badge">NLP</span></div><div class="pc-body"><div class="pc-category">Natural Language Processing</div><h3 class="pc-title">Customer Sentiment Analysis Dashboard</h3><p class="pc-desc">Analyzes customer reviews from Amazon/Twitter in real-time with interactive visualization using BERT.</p><div class="pc-footer"><div class="pc-tech"><span>BERT</span><span>Streamlit</span><span>Pandas</span></div><a href="#cta" class="pc-link">Build Mine <i class="fas fa-arrow-right"></i></a></div></div></article>
+      <article class="project-card reveal"><div class="pc-thumb pc-gradient-4"><i class="fas fa-car pc-thumb-icon"></i><span class="pc-badge">Image Processing</span></div><div class="pc-body"><div class="pc-category">Computer Vision</div><h3 class="pc-title">Vehicle Number Plate Detection</h3><p class="pc-desc">Automatic license plate recognition using YOLO + Tesseract OCR for real-time traffic systems.</p><div class="pc-footer"><div class="pc-tech"><span>YOLO</span><span>OCR</span><span>OpenCV</span></div><a href="#cta" class="pc-link">Build Mine <i class="fas fa-arrow-right"></i></a></div></div></article>
+      <article class="project-card reveal"><div class="pc-thumb pc-gradient-5"><i class="fas fa-chart-line pc-thumb-icon"></i><span class="pc-badge">Data Science</span></div><div class="pc-body"><div class="pc-category">Financial Analytics</div><h3 class="pc-title">Stock Price Prediction with LSTM</h3><p class="pc-desc">Deep learning model forecasting stock prices using historical time series data with LSTM networks.</p><div class="pc-footer"><div class="pc-tech"><span>LSTM</span><span>TensorFlow</span><span>yfinance</span></div><a href="#cta" class="pc-link">Build Mine <i class="fas fa-arrow-right"></i></a></div></div></article>
+      <article class="project-card reveal"><div class="pc-thumb pc-gradient-6"><i class="fas fa-hand pc-thumb-icon"></i><span class="pc-badge">Deep Learning</span></div><div class="pc-body"><div class="pc-category">Gesture Recognition</div><h3 class="pc-title">Sign Language to Text Translator</h3><p class="pc-desc">Real-time hand gesture recognition translating sign language into text and speech using CNN + MediaPipe.</p><div class="pc-footer"><div class="pc-tech"><span>CNN</span><span>MediaPipe</span><span>gTTS</span></div><a href="#cta" class="pc-link">Build Mine <i class="fas fa-arrow-right"></i></a></div></div></article>
+    </div>
+  </div>
+</section>
+
+<section id="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item reveal"><div class="stat-icon"><i class="fas fa-folder-open"></i></div><div class="stat-num">10+</div><div class="stat-label">Projects Delivered</div></div>
+      <div class="stat-item reveal"><div class="stat-icon"><i class="fas fa-face-smile"></i></div><div class="stat-num">100%</div><div class="stat-label">Happy Customers</div></div>
+      <div class="stat-item reveal"><div class="stat-icon"><i class="fas fa-star"></i></div><div class="stat-num">4.9&#9733;</div><div class="stat-label">Average Rating</div></div>
+      <div class="stat-item reveal"><div class="stat-icon"><i class="fas fa-clock"></i></div><div class="stat-num">24h</div><div class="stat-label">Response Time</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials">
+  <div class="container">
+    <div style="text-align:center;">
+      <span class="section-tag reveal">Testimonials</span>
+      <h2 class="section-title reveal">What Our <span>Clients Say</span></h2>
+      <p class="section-sub reveal" style="margin:0 auto;">Real feedback from students and developers who trusted us with their projects.</p>
+    </div>
+    <div class="testimonials-grid">
+      <article class="testi-card reveal"><div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="testi-quote">"Absolutely amazing service! Got my ML project on disease prediction with a perfect report. Presented it confidently in my viva. Highly recommended!"</p><div class="testi-author"><div class="testi-avatar">AR</div><div><div class="testi-name">Aditya Rao</div><div class="testi-role">Final Year B.Tech CSE Student</div></div></div></article>
+      <article class="testi-card reveal"><div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="testi-quote">"They built a face recognition system for me in 3 days with a full explanation video. The installation guide was super clear. Worth every penny!"</p><div class="testi-author"><div class="testi-avatar">SK</div><div><div class="testi-name">Sara Khan</div><div class="testi-role">MCA Student</div></div></div></article>
+      <article class="testi-card reveal"><div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="testi-quote">"Got a data science project with full EDA and dashboard. The report was academic-grade and my professor was very impressed. Thank you so much!"</p><div class="testi-author"><div class="testi-avatar">PM</div><div><div class="testi-name">Abhishek</div><div class="testi-role">B.Sc. Data Science Student</div></div></div></article>
+      <article class="testi-card reveal"><div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="testi-quote">"Needed an NLP-based chatbot in under a week for a hackathon. They delivered on time, explained everything, and even fixed a bug I found. Top tier!"</p><div class="testi-author"><div class="testi-avatar">JT</div><div><div class="testi-name">Hanisha shaik</div><div class="testi-role">Software Developer</div></div></div></article>
+      <article class="testi-card reveal"><div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="testi-quote">"The YOLO-based object detection project they built was beyond my expectations. Clean code, detailed comments, and a superb report. Will order again!"</p><div class="testi-author"><div class="testi-avatar">NA</div><div><div class="testi-name">Akshitha</div><div class="testi-role">M.Tech AI &amp; ML Student</div></div></div></article>
+      <article class="testi-card reveal"><div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="testi-quote">"Affordable pricing compared to other services. Got a complete stock prediction project with LSTM, all explained line by line. Superb work!"</p><div class="testi-author"><div class="testi-avatar">RG</div><div><div class="testi-name">Lavanya</div><div class="testi-role">Finance &amp; Tech Enthusiast</div></div></div></article>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <div class="about-inner">
+      <div class="about-content reveal">
+        <span class="section-tag">About Us</span>
+        <h2 class="section-title">Who We <span>Are</span></h2>
+        <p>We are <strong>CodeCraft Solutions</strong> — a team of passionate Computer Science developers and AI engineers dedicated to helping students, freelancers, and early-stage developers build impressive, functional projects at affordable prices.</p>
+        <p>Whether you're a final-year student looking for a project that stands out, or a professional needing a prototype quickly, we deliver high-quality solutions with full documentation and support.</p>
+        <p>We believe that access to quality project development shouldn't be expensive. Our mission is to bridge the gap between theoretical knowledge and practical, working systems.</p>
+        <div class="about-values">
+          <div class="about-val"><i class="fas fa-check-circle"></i><span><strong>Affordable Pricing</strong> — Transparent rates with no hidden charges</span></div>
+          <div class="about-val"><i class="fas fa-check-circle"></i><span><strong>On-Time Delivery</strong> — We respect your deadlines, always</span></div>
+          <div class="about-val"><i class="fas fa-check-circle"></i><span><strong>Original Work</strong> — Every project is built from scratch, no plagiarism</span></div>
+          <div class="about-val"><i class="fas fa-check-circle"></i><span><strong>Full Support</strong> — We're with you from brief to viva</span></div>
+          <div class="about-val"><i class="fas fa-check-circle"></i><span><strong>Confidentiality</strong> — Your project and data are 100% private</span></div>
+        </div>
+        <a href="#contact" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Fill Enquiry Form</a>
+      </div>
+      <div class="reveal">
+        <div class="contact-panel">
+          <h3>Get In Touch</h3>
+          <div class="contact-items">
+            <div class="contact-item"><div class="c-icon"><i class="fas fa-envelope"></i></div><div><div class="c-label">Email</div><div class="c-value"><a href="mailto:codecraft624@gmail.com">codecraft624@gmail.com</a></div></div></div>
+            <div class="contact-item"><div class="c-icon"><i class="fas fa-clock"></i></div><div><div class="c-label">Working Hours</div><div class="c-value">Mon &ndash; Sat, 9:00 AM &ndash; 9:00 PM IST</div></div></div>
+            <div class="contact-item"><div class="c-icon"><i class="fas fa-paper-plane"></i></div><div><div class="c-label">Project Enquiry Form</div><div class="c-value"><a href="#contact">Fill our quick enquiry form &rarr;</a></div></div></div>
+          </div>
+          <div class="availability"><span class="avail-dot"></span> Available now &mdash; typically replies within 2 hours</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="container">
+    <div style="text-align:center;"><span class="section-tag reveal">FAQ</span><h2 class="section-title reveal">Frequently Asked <span>Questions</span></h2></div>
+    <div class="faq-list">
+      <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">How much do your projects cost? <i class="fas fa-plus"></i></button><div class="faq-a">Our pricing depends on project complexity and tech stack. We offer highly affordable packages for students. Contact us with your requirements and we'll provide a custom quote — no obligation!</div></div>
+      <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">How long does it take to complete a project? <i class="fas fa-plus"></i></button><div class="faq-a">Most projects are delivered within 2–7 days depending on complexity. Simple Python or ML projects can be done in 24–48 hours. We always confirm the timeline before starting.</div></div>
+      <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">Is the code original or plagiarized? <i class="fas fa-plus"></i></button><div class="faq-a">All our projects are 100% original, written from scratch for each client. We do not resell projects. Your project is unique to you and will not be shared with anyone else.</div></div>
+      <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">Do you help with project explanation and viva prep? <i class="fas fa-plus"></i></button><div class="faq-a">Yes! Every delivery includes a detailed video explanation walking you through the entire project. We also provide a session where we explain the code, logic, and help you prepare for your viva/presentation.</div></div>
+      <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">What if I need changes after delivery? <i class="fas fa-plus"></i></button><div class="faq-a">We offer up to 2 free revision rounds within 7 days of delivery. If the scope changes significantly, we discuss fair additional pricing. Our goal is your complete satisfaction.</div></div>
+      <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">Which domains and tech stacks do you work with? <i class="fas fa-plus"></i></button><div class="faq-a">We specialize in Python-based AI/ML projects, but also handle web development (Flask, Django, Node.js), data science, IoT, and database projects. If you have a specific requirement, just ask!</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="cta">
+  <div class="container">
+    <div class="cta-content">
+      <span class="section-tag reveal" style="background:rgba(0,201,200,.15);color:var(--aqua-light);border-color:rgba(0,201,200,.3);">Let's Work Together</span>
+      <h2 class="reveal">Ready to Get Your <span>Project Built?</span></h2>
+      <p class="reveal">Share your project requirements and get a free quote within hours. No commitment required — just a friendly conversation.</p>
+      <div class="cta-actions reveal">
+        <a href="mailto:codecraft624@gmail.com" class="btn btn-primary"><i class="fas fa-envelope"></i> Email Us Now</a>
+        <a href="#contact" class="btn btn-white"><i class="fas fa-paper-plane"></i> Fill Enquiry Form</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" style="padding:6rem 0; background:var(--off-white);">
+  <div class="container">
+    <div style="text-align:center; margin-bottom:2.5rem;">
+      <span class="section-tag reveal">Enquiry Form</span>
+      <h2 class="section-title reveal">Start Your <span>Project</span></h2>
+      <p class="section-sub reveal" style="margin:0 auto 1.5rem;">Fill out the form and we'll reply within 2 hours with a custom quote. No commitment required!</p>
+      <div class="reveal" style="display:inline-flex;align-items:center;gap:1.2rem;flex-wrap:wrap;justify-content:center;margin-bottom:2rem;">
+        <a href="mailto:codecraft624@gmail.com" class="btn btn-outline" style="font-size:.82rem;padding:.55rem 1.2rem;"><i class="fas fa-envelope"></i> codecraft624@gmail.com</a>
+        <span style="color:var(--grey-text);font-size:.82rem;"><i class="fas fa-clock" style="color:var(--aqua);margin-right:.3rem;"></i>Mon–Sat &nbsp;|&nbsp; 9 AM – 9 PM IST</span>
+      </div>
+    </div>
+    <!-- GOOGLE FORM EMBED — replace YOUR_FORM_ID_HERE with your real form ID -->
+    <div class="reveal" style="background:white;border:1.5px solid rgba(0,201,200,.2);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-md);max-width:780px;margin:0 auto;">
+      <iframe
+        src="https://docs.google.com/forms/d/e/1FAIpQLSe9d-A3wKLMsJF3U0Vq46nWYseCH4cE1YT6LDVCr09rpYkxWg/viewform?embedded=true"
+        width="100%"
+        height="720"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0"
+        style="display:block;"
+        title="CodeCraft Project Enquiry Form">
+        Loading…
+      </iframe>
+    </div>
+    <p class="reveal" style="text-align:center;margin-top:1rem;font-size:.8rem;color:var(--grey-text);">
+      <i class="fas fa-lock" style="color:var(--aqua);margin-right:.3rem;"></i>
+      Your information is private and only used to respond to your enquiry.
+    </p>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="#hero" class="logo" style="margin-bottom:1rem;display:inline-flex;">
+          <div class="logo-icon"><i class="fas fa-code"></i></div>
+          <span style="color:white">CodeCraft<span class="logo-dot">.</span></span>
+        </a>
+        <p>Affordable, professional Computer Science project development for students and developers. We deliver code, report, explanation &amp; installation.</p>
+        <div class="social-row" style="margin-top:1.2rem;">
+          <a href="#" class="social-btn" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="#" class="social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-btn" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a href="#services">Machine Learning</a></li><li><a href="#services">Deep Learning</a></li><li><a href="#services">Python Projects</a></li><li><a href="#services">Data Science</a></li><li><a href="#services">Image Processing</a></li><li><a href="#services">NLP Projects</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a href="#about">About Us</a></li><li><a href="#portfolio">Portfolio</a></li><li><a href="#testimonials">Reviews</a></li><li><a href="#faq">FAQ</a></li><li><a href="#delivery">Our Process</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li><a href="mailto:codecraft624@gmail.com"><i class="fas fa-envelope" style="color:var(--aqua);margin-right:.4rem;"></i> Email Us</a></li><li><a href="#contact"><i class="fas fa-paper-plane" style="color:var(--aqua);margin-right:.4rem;"></i> Enquiry Form</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 <span>CodeCraft Solutions</span>. All rights reserved.</p>
+      <p>Built with <span>&hearts;</span> for CS Students &amp; Developers</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 20));
+
+  function toggleMenu(btn) {
+    const menu = document.getElementById('mobileMenu');
+    const isOpen = menu.classList.toggle('open');
+    btn.classList.toggle('open', isOpen);
+  }
+  function closeMenu() {
+    document.getElementById('mobileMenu').classList.remove('open');
+    document.querySelector('.hamburger').classList.remove('open');
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        entry.target.style.transitionDelay = (i % 4) * 0.08 + 's';
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  function toggleFaq(btn) {
+    const item = btn.parentElement;
+    item.classList.toggle('open');
+    document.querySelectorAll('.faq-item').forEach(other => { if (other !== item) other.classList.remove('open'); });
+  }
+
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', e => {
+      const t = document.querySelector(link.getAttribute('href'));
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
+  });
+</script>
+</body>
+</html>
